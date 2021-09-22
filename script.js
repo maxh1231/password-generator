@@ -62,16 +62,16 @@ let upperCaseLetters = [
 ];
 
 let numbers = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "0",
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  0,
 ];
 
 let specialCharacters = [
@@ -96,19 +96,43 @@ let specialCharacters = [
 ];
 
 
+
+
+
+
 let userInputCharacterAmount = window.prompt("Please select a character amount");
 
 while (userInputCharacterAmount < 8 || userInputCharacterAmount > 128) {
   userInputCharacterAmount = window.prompt("Please select a character amount between 8 and 128");
 }
 
+
+
+
 let userInputSpecialCharacter = window.prompt("Please select character type. IE. lowercase, uppercase, numeric, and/or special characters");
 
-if (isNaN(userInputSpecialCharacter)) {
-  console.log("is NOT a number");
-} else {
-  console.log("is a number");
+
+
+
+function numberPassword() {
+  let number = numbers[Math.floor(Math.random() * numbers.length)];
+  console.log(number);
+  userInputCharacterAmount = parseInt(userInputCharacterAmount, 10);
+  console.log(number + userInputCharacterAmount);
 }
+
+while (numberPassword() > 128) {
+  numberPassword();
+}
+
+
+
+// if (isNaN(userInputSpecialCharacter)) {
+//   console.log("is NOT a number");
+// } else {
+//   numberPassword();
+//   console.log(number);
+// }
 
 // if (userInputCharacterAmount < 8 || userInputCharacterAmount > 128) {
 //   userInputCharacterAmount = window.prompt("Please select a password between 8 and 128 characters");
