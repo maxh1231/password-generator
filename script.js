@@ -1,6 +1,7 @@
 // Assignment Code
 // lowercase 0-26   uppercase 26-52     numbers 52-62     special characters 62-89
 let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{};':<>,./?";
+let numbers = "1234567890";
 
 function password() {
   let characterLength = window.prompt("How many characters would you like?");
@@ -12,14 +13,27 @@ function password() {
     characterLength = window.prompt("Pleasse chose between 8 and 128 characters");
   }
 
+  let isLowerCase = confirm("Would you like to include Lowercase characters?");
+  let isUpperCase = confirm("Would you like to include Uppercase characters?");
+  let isNumeric = confirm("Would you like to include Numeric characters?");
+  let isSpecial = confirm("Would you like to include Special Characters?");
 
+  if (isNumeric && isUpperCase == false && isLowerCase == false && isSpecial == false) {
+    for (let i = 0; i <= characterLength; i++) {
+      var random = Math.floor(Math.random() * numbers.length);
+      password += numbers.substring(random, random + 1);
+      password = password.substring(0, characterLength);
+      console.log(password);
+    }
+  }
 
-
-  for (let i = 0; i <= characterLength; i++) {
-    var random = Math.floor(Math.random() * characters.length);
-    password += characters.substring(random, random + 1);
-    password = password.substring(0, characterLength);
-    console.log(password);
+  if (isLowerCase && isUpperCase && isNumeric && isSpecial) {
+    for (let i = 0; i <= characterLength; i++) {
+      var random = Math.floor(Math.random() * characters.length);
+      password += characters.substring(random, random + 1);
+      password = password.substring(0, characterLength);
+      console.log(password);
+    }
   }
 }
 
