@@ -1,4 +1,6 @@
 // Assignment Code
+// lowercase 0-26   uppercase 26-52     numbers 52-62     special characters 62-89
+let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{};':<>,./?";
 
 
 // let generateBtn = document.querySelector("#generate");
