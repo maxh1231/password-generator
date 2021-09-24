@@ -6,11 +6,12 @@ let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let specialCharacters = "!@#$%^&*()_+-=[]{};':<>,./?";
 
-function password() {
+function generatePassword() {
   let characterLength = window.prompt("How many characters would you like?");
   characterLength = parseInt(characterLength, 10);
   console.log(characterLength);
-  let password = "";
+  let randomPass = "";
+
 
   while (characterLength < 8 || characterLength > 128) {
     characterLength = window.prompt("Pleasse chose between 8 and 128 characters");
@@ -26,9 +27,9 @@ function password() {
   if (isLowerCase && isUpperCase == false && isNumeric == false && isSpecial == false) {
     for (let i = 0; i <= characterLength; i++) {
       var random = Math.floor(Math.random() * lowerCase.length);
-      password += lowerCase.substring(random, random + 1);
-      password = password.substring(0, characterLength);
-      console.log(password);
+      randomPass += lowerCase.substring(random, random + 1);
+      randomPass = randomPass.substring(0, characterLength);
+
     }
   }
 
@@ -36,9 +37,9 @@ function password() {
   if (isUpperCase && isLowerCase == false && isNumeric == false && isSpecial == false) {
     for (let i = 0; i <= characterLength; i++) {
       var random = Math.floor(Math.random() * upperCase.length);
-      password += upperCase.substring(random, random + 1);
-      password = password.substring(0, characterLength);
-      console.log(password);
+      randomPass += upperCase.substring(random, random + 1);
+      randomPass = randomPass.substring(0, characterLength);
+
     }
   }
 
@@ -46,9 +47,9 @@ function password() {
   if (isNumeric && isUpperCase == false && isLowerCase == false && isSpecial == false) {
     for (let i = 0; i <= characterLength; i++) {
       var random = Math.floor(Math.random() * numbers.length);
-      password += numbers.substring(random, random + 1);
-      password = password.substring(0, characterLength);
-      console.log(password);
+      randomPass += numbers.substring(random, random + 1);
+      randomPass = randomPass.substring(0, characterLength);
+
     }
   }
 
@@ -56,9 +57,9 @@ function password() {
   if (isSpecial && isUpperCase == false && isLowerCase == false && isNumeric == false) {
     for (let i = 0; i <= characterLength; i++) {
       var random = Math.floor(Math.random() * specialCharacters.length);
-      password += specialCharacters.substring(random, random + 1);
-      password = password.substring(0, characterLength);
-      console.log(password);
+      randomPass += specialCharacters.substring(random, random + 1);
+      randomPass = randomPass.substring(0, characterLength);
+
     }
   }
 
@@ -67,11 +68,14 @@ function password() {
   if (isLowerCase && isUpperCase && isNumeric && isSpecial) {
     for (let i = 0; i <= characterLength; i++) {
       var random = Math.floor(Math.random() * characters.length);
-      password += characters.substring(random, random + 1);
-      password = password.substring(0, characterLength);
-      console.log(password);
+      randomPass += characters.substring(random, random + 1);
+      randomPass = randomPass.substring(0, characterLength);
+
+
     }
   }
+  return randomPass;
+  console.log(randomPass);
 }
 
 
