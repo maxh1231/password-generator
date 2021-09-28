@@ -188,7 +188,7 @@ function generatePassword() {
   // if NONE
   if (!isLowerCase && !isUpperCase && !isNumeric && !isSpecial) {
     alert("Please choose atleast 1 option");
-    generatePassword();
+    
   }
 
   return randomPass;
