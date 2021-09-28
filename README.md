@@ -1,6 +1,6 @@
 # Password Generator Challenge
 
-# Built WIth
+# Built With
 * HTML
 * CSS
 * JS
